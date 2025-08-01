@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap" rel="stylesheet">
+  <title>Bug Hunter Quiz App</title>
+</head>
+<body>
+
+  <div class="quiz-container">
+
+    <div class="intro-card">
+      <h1>Bug Hunter Mystery</h1>
+      <p><strong>Scenario:</strong> You're a dev detective trying to solve a nasty bug in production. Each question is a
+        clue. Choose wisely.</p>
+      <button id="start">Got it</button>
+    </div>
+
+    <div class="question-card hidden">
+      <h2 id="clue">Clue</h2>
+      <h3 id="question">Question</h3>
+      <ul>
+        <li>
+          <input type="radio" name="answer" class="answer" id="a">
+          <label for="a" id="a_text">Answer A</label>
+        </li>
+        <li>
+          <input type="radio" name="answer" class="answer" id="b">
+          <label for="b" id="b_text">Answer B</label>
+        </li>
+        <li>
+          <input type="radio" name="answer" class="answer" id="c">
+          <label for="c" id="c_text">Answer C</label>
+        </li>
+        <li>
+          <input type="radio" name="answer" class="answer" id="d">
+          <label for="d" id="d_text">Answer D</label>
+        </li>
+      </ul>
+      <p id="feedback"></p>
+      <button id="submit">Next Clue</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</body>
+</html>
