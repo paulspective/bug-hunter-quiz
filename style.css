@@ -87,10 +87,6 @@ button {
   transition: background-color 0.3s ease;
 }
 
-button:focus {
-  background-color: #333;
-}
-
 #feedback {
   display: none;
   margin-top: 10px;
@@ -144,4 +140,5 @@ button:focus {
     font-size: 0.9rem;
     padding: 0.5rem;
   }
+
 }
