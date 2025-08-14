@@ -97,6 +97,8 @@ function selectedAns() {
 
 function loadQuiz() {
   deselectAnswers();
+  submitBtn.style.backgroundColor = '#333';
+  submitBtn.disabled = true;
 
   const current = quizData[currentQuiz];
   const originalAnswers = [...current.answers];
@@ -123,6 +125,8 @@ answerEls.forEach(el => {
   el.addEventListener('change', () => {
     document.querySelectorAll('ul li').forEach(li => li.classList.remove('selected'));
     el.closest('li').classList.add('selected');
+    submitBtn.style.backgroundColor = '#a4e93d';
+    submitBtn.disabled = false
   });
 });
 
@@ -145,6 +149,7 @@ submitBtn.addEventListener('click', () => {
     feedback.classList.add('show');
 
     setTimeout(() => {
+      submitBtn.style.backgroundColor = '#333';
       quizCard.style.opacity = 0;
 
       setTimeout(() => {
@@ -182,9 +187,15 @@ submitBtn.addEventListener('click', () => {
 });
 
 function showResult() {
+  let endMessage = `You solved ${score}/${quizData.length} clues.`;
+
+  if (score === quizData.length) {
+    endMessage += ` 🏆 Legendary Bug Hunter!`;
+  }
+
   quizContainer.innerHTML = `
     <h2>Case Closed!</h2>
-    <p>You solved ${score}/${quizData.length} clues.</p>
+    <p>${endMessage}</p>
     <button onclick="location.reload()">Restart Investigation</button>
   `;
 
